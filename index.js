@@ -137,3 +137,20 @@ let willBuyDrink = (isHotOutside, moneyInPocket) => {
   }
 }
 console.log(willBuyDrink(true, 20))
+
+// 13. Create a function of your own that solves a problem.   
+//In comments, write what the function does and why you created it.
+let random = ["car", "bat", "cat", "rainbow"]
+let randomTwo = ["car", "bat", "dog", "rainbow"]
+
+let findItem = (array) => {
+  if(array.find(e => (e === "cat"))) { //array.find() iterates through an array and returns that item if found
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(findItem(randomTwo))
+
+//I created this function so I could play aorund with the find() method. 
+//Which is useful to know if you ever want to find a specific element in an array.
