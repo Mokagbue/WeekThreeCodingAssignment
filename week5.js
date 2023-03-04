@@ -1,3 +1,6 @@
+
+
+
 // Use at least one array.
 // Use at least two classes.
 // Your menu should have the options to create, view, and delete elements.
@@ -5,22 +8,21 @@
 // Guild -> [Adventuring Party Members
 // Guild: guild name, list of guild members
 
-// Player -> [Makes Characters]
-// Player: player name, list of characters they have made
 
-// Characters:
+// Members:
 // character name (text input),
 // race (human, orc, elf, dwarf, etc)(text input),
 // class (wizard, rogue, fighter)(text input)
 
-//Guild create/add GuildMembers, view members, and delete members
+// Guild create/add GuildMembers, view members, and delete members
 
-// Player create Characters, view their Chracters, and delete Characters
-
+// TODO: get 'view guilds' to allow user input of the guild name rather than the index
 // Cons: not being able to 'select' options leaves input in the users hands, which can be ... interesting.
 // can look into making selects later, right now the focus is understanding Classes
 
-// Character Class
+
+
+// Member Class
 class Member {
   constructor(memberName, memberRace, memberClass) {
     this.memberName = memberName;
@@ -28,7 +30,7 @@ class Member {
     this.memberClass = memberClass;
   }
   present() {
-    return `New Charater Created: ${this.memberName} is an ${this.memberRace} ${this.memberClass}.`;
+    return `New Member Created: ${this.memberName} is an ${this.memberRace} ${this.memberClass}.`;
   }
 }
 
@@ -72,7 +74,7 @@ class GuildMaker {
           this.viewGuild();
           break;
         case "3":
-          this.DeleteGuild();
+          this.deleteGuild();
           break;
         case "4":
           this.displayGuilds();
@@ -120,17 +122,18 @@ class GuildMaker {
   }
 
   viewGuild() {
-    // change to view by guild name not index
+  
     let index = prompt("Enter the Guild Number you want to look at: ");
-    if (index > -1 && index < this.guilds.length) {
+    
+     if (index > -1 && index < this.guilds.length) {
+     
       this.selectedGuild = this.guilds[index];
-      let guildInfo = "Guild Name: " + this.selectedGuild.guildName + "\n";
-       //description += " " +  this.selectedGuild.describe() + '\n';
-
+      let guildInfo = "-----------" + "\n" + "Guild Name: " + this.selectedGuild.guildName + "\n";
+     
       for (let i = 0; i < this.selectedGuild.members.length; i++) {
         guildInfo +=
           i +
-          "." +
+          ". " +
           this.selectedGuild.members[i].memberName +
           " - " +
           this.selectedGuild.members[i].memberRace +
@@ -147,13 +150,15 @@ class GuildMaker {
         case "2":
           this.deleteMember();
       }
+    } else {
+      console.log("looking for index???", this.guilds)
     }
   }
 
   deleteGuild() {
-    let index = prompt("Enter the Guild Number you want to look at: ");
+    let index = prompt("Enter the Guild Number you want to delete: ");
     if (index > -1 && index < this.guilds.length) {
-      this.selectedGuild.splice(index, 1);
+     this.guilds.splice(index, 1);
     }
   }
 
