@@ -85,11 +85,14 @@ let war = (handOne, handTwo) => {
   console.log("Final Scores: ", playerOneScore, playerTwoScore);
 
   if (playerOneScore > playerTwoScore) {
-    console.log("Player One has won the war... but at what cost.");
+    console.log("Player One has won the war... but at what cost.")
+    return "Player One has won the war... but at what cost.";
   } else if (playerOneScore < playerTwoScore) {
-    console.log("Player Two has won the war... but at what cost.");
+    console.log("Player Two has won the war... but at what cost.")
+    return "Player Two has won the war... but at what cost.";
   } else {
-    console.log("No one wins in war...");
+    console.log("No one wins in war...")
+    return "No one wins in war...";
   }
 };
 
