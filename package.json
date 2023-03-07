@@ -1,0 +1,12 @@
+{
+  "name": "WeekThreeCodingAssignment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Mokagbue/WeekThreeCodingAssignment.git",
+  "author": "Michelle Okagbue <umbralcompendium@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
+}
